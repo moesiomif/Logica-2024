@@ -1,0 +1,92 @@
+\item
+		 Um grande banco formará uma comissão que será comandada por três de suas funcionárias, Alice, Beatriz e Carla. Nessa comissão, uma delas será a presidente, outra será a gerente, e outra, a coordenadora. A distribuição desses cargos deverá, necessariamente, considerar as quatro seguintes restrições:
+		 \begin{itemize}
+				 \item (I) Se Carla for a gerente, então Beatriz terá de ser a presidente;
+				 \item (II) Se Alice for a presidente, então Carla terá de ser a gerente;
+				 \item (III) Se Beatriz não for a coordenadora, então Alice terá de ser a gerente;
+				 \item (IV) Se Carla for a coordenadora, então Beatriz terá de ser a gerente.
+		 \end{itemize}
+
+Nessas circunstâncias, os respectivos cargos de Alice, Beatriz e Carla serão
+\begin{enumerate}
+		\item gerente, coordenadora e presidente 
+		\item gerente, presidente e coordenadora
+		\item coordenadora, presidente e gerente
+		\item presidente, gerente e coordenadora
+		\item presidente, coordenadora e gerente
+\end{enumerate}
+
+\noindent
+\SOL{Sejam:
+	\begin{itemize}
+		\item $C_x$: Carla é $x$;
+		\item $B_x$: Beatriz é $x$;
+		\item $A_x$: Alice é $x$.
+	\end{itemize}
+	onde $x\in \{p,c,g\}=\{\text{presidente}, \text{coordenadora}, \text{gerente}\}$. De acordo com o enunciado temos as seguintes premissas:
+
+	Teste para os itens ($(a)-(b)$):
+\begin{center}
+		\[\begin{tabular}{lll}
+			(1)\ &$C_g       \rightarrow B_p$ &\\
+			(2)\ &$A_p       \rightarrow C_g$ &\\
+			(3)\ &$\neg B_c  \rightarrow A_g$ &\\
+			(4)\ &$C_c       \rightarrow B_g$ &\\
+			(5)\ &$A_g      $\ &(\text{Teste a hipótese: Alice gerente}) \\
+		         \hline
+			(6)\ &$\neg A_p      $ & $5- P.N.C.$ \\
+			(7)\ &$\neg A_c      $ & $5- P.N.C.$ \\
+			(8)\ &$\neg B_g      $ & $5- P.N.C.$ \\
+			(9)\ &$\neg C_g      $ & $5- P.N.C.$ \\
+			(10)\ &$\neg C_c   $ & $4,8- MT$ \\
+			(11)\ &$C_p   $ & $9,10- P.T.E.$ \\
+			(12)\ &$B_c   $ & $5,11- P.T.E.$ \\
+		\end{tabular}\]
+		\end{center}
+O argumento confirmar o item $(a)$ e torna falso o $(b)$.
+
+	Teste para os itens ($(c)$):
+\begin{center}
+		\[\begin{tabular}{lll}
+			(1)\ &$C_g       \rightarrow B_p$ &\\
+			(2)\ &$A_p       \rightarrow C_g$ &\\
+			(3)\ &$\neg B_c  \rightarrow A_g$ &\\
+			(4)\ &$C_c       \rightarrow B_g$ &\\
+			(5)\ &$A_c      $\ &(\text{Teste a hipótese: Alice coordenadora}) \\
+		         \hline
+			(6)\ &$\neg A_p      $ & $5- P.N.C.$ \\
+			(7)\ &$\neg A_g      $ & $5- P.N.C.$ \\
+			(8)\ &$\neg B_c      $ & $5- P.N.C.$ \\
+			(9)\ &$\neg C_c      $ & $5- P.N.C.$ \\
+			(10)\ &$\neg \neg B_c   $ & $3,7- MT$ \\
+			(11)\ &$ B_c   $ & $10- DN$ \\
+			(12)\ &$ \neg B_c\wedge B_c   $ & $8,11- CONJ$ \\
+			\text{Contradição}
+		\end{tabular}\]
+		\end{center}
+O sistema é inconsistente o que falso o $(c)$, pois Alice não pode ser coordenadora.
+}
+
+\newpage
+\SOL{
+	Teste para os itens ($(d)-(e)$):
+\begin{center}
+		\[\begin{tabular}{lll}
+			(1)\ &$C_g       \rightarrow B_p$ &\\
+			(2)\ &$A_p       \rightarrow C_g$ &\\
+			(3)\ &$\neg B_c  \rightarrow A_g$ &\\
+			(4)\ &$C_c       \rightarrow B_g$ &\\
+			(5)\ &$A_p      $\ &(\text{Teste a hipótese: Alice presidente}) \\
+		         \hline
+			(6)\ &$\neg A_c      $ & $5- P.N.C.$ \\
+			(7)\ &$\neg A_g      $ & $5- P.N.C.$ \\
+			(8)\ &$\neg B_p      $ & $5- P.N.C.$ \\
+			(9)\ &$\neg C_p      $ & $5- P.N.C.$ \\
+			(10)\ &$\neg C_g   $ & $1,8- MT$ \\
+			(10)\ &$\neg A_p   $ & $2,10- MT$ \\
+			(11)\ &$ A_p\wedge \neg A_p   $ & $5,10- CONJ$ \\
+			\text{Contradição}
+		\end{tabular}\]
+		\end{center}
+O sistema é inconsistente o que torna falso o $(d)-(e)$, pois Alice não pode ser presidente.
+}
