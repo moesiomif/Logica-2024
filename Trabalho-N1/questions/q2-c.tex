@@ -11,3 +11,38 @@ Com base nessas informações, julgue.
 Um argumento que tenha $P_1$ e $P_2$ como
 premissas e $P_3$ como conclusão será um
 argumento válido.
+
+\SOL{Sejam:
+	\begin{itemize}
+		\item $B$: bom;
+		\item $Bt$: barato;
+		\item $R$: rápido
+	\end{itemize}
+	podemos traduzir em linguagem simbólica:
+	\[
+		(B\wedge R) \rightarrow \neg Bt,\ (B\wedge Bt)\rightarrow \neg R \vdash (R\wedge Bt)  \rightarrow \neg B 
+	\]
+utilizando o Teorema de Dedução:
+	\[
+		(B\wedge R) \rightarrow \neg Bt,\ (B\wedge Bt)\rightarrow \neg R,\ (R\wedge Bt)  \vdash  \neg B 
+	\]
+\begin{center}
+		\[\begin{tabular}{lll}
+			(1)\ &$(B\wedge R)       \rightarrow \neg Bt$ &\\
+			(2)\ &$(B\wedge Bt)    \rightarrow \neg R$ &\\
+			(3)\ &$(R\wedge Bt)$ &\\
+		         \hline
+			(4)\ &$ R  $ & $3- SIMP$ \\
+			(5)\ &$ Bt  $ & $3- SIMP$ \\
+			(6)\ &$ \neg \neg Bt  $ & $5- DN$ \\
+			(7)\ &$ \neg (B \wedge R)  $ & $1,6- MT$ \\
+			(8)\ &$ \neg B \vee \neg R  $ & $7- DM$ \\
+			(9)\ &$ \neg \neg R  $ & $4- DN$ \\
+			(10)\ &$ \neg B  $ & $8,9- SD$ \\
+		\end{tabular}\]
+		\end{center}
+A dedução acima confirmar a validade do argumento.
+
+
+
+}
